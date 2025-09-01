@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 12: 폼 유효성 검사</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #333; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .error {
+            border-color: #dc3545 !important;
+            background-color: #fff5f5;
+        }
+        .success {
+            border-color: #28a745 !important;
+            background-color: #f8fff9;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        .success-message {
+            color: #28a745;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .requirements {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>회원가입 폼</h1>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">사용자명</label>
+                <input type="text" id="username" name="username" placeholder="3-20자 영문, 숫자, 언더스코어">
+                <div class="error-message" id="username-error"></div>
+                <div class="requirements">사용자명은 3-20자 영문, 숫자, 언더스코어만 가능합니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com">
+                <div class="error-message" id="email-error"></div>
+                <div class="success-message" id="email-success">유효한 이메일 형식입니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="8자 이상, 영문+숫자+특수문자">
+                <div class="error-message" id="password-error"></div>
+                <div class="requirements">비밀번호는 8자 이상, 영문+숫자+특수문자를 포함해야 합니다.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">비밀번호 확인</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호를 다시 입력하세요">
+                <div class="error-message" id="confirmPassword-error"></div>
+            </div>
+
+            <button type="submit" id="submitBtn">가입하기</button>
+        </form>
+
+        <div id="result" style="margin-top: 20px; padding: 15px; border-radius: 5px; display: none;"></div>
+    </div>
+
+    <script>
+        // TODO: 폼 유효성 검사 기능을 구현하세요
+        
+        // 1. 실시간 유효성 검사 (input 이벤트)
+        // 2. 폼 제출 시 전체 유효성 검사
+        // 3. 각 필드별 유효성 검사 규칙:
+        //    - 사용자명: 3-20자, 영문/숫자/언더스코어만
+        //    - 이메일: 유효한 이메일 형식
+        //    - 비밀번호: 8자 이상, 영문+숫자+특수문자 포함
+        //    - 비밀번호 확인: 비밀번호와 일치
+        
+        // 힌트: 
+        // - 정규표현식 사용 (username: /^[a-zA-Z0-9_]{3,20}$/)
+        // - 이메일: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        // - 비밀번호: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        // - classList.add('error'), classList.remove('error') 사용
+        // - error-message 요소의 display 스타일 조작
+        
+    </script>
+</body>
+</html>

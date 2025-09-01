@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 17: 캐러셀</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #333; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .carousel-section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .carousel-section h2 {
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+        }
+        .slide-1 { background-color: #007bff; }
+        .slide-2 { background-color: #28a745; }
+        .slide-3 { background-color: #dc3545; }
+
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .status {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ 캐러셀</h1>
+        
+        <!-- 캐러셀 섹션 -->
+        <div class="carousel-section">
+            <h2>🖼️ 이미지 캐러셀</h2>
+            <div class="carousel-container" id="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide slide-1">1</div>
+                    <div class="carousel-slide slide-2">2</div>
+                    <div class="carousel-slide slide-3">3</div>
+                </div>
+            </div>
+            
+            <div class="status" id="carouselStatus">자동 재생 중...</div>
+            
+            <div class="controls">
+                <button class="btn-warning" id="stopBtn">정지</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TODO: 캐러셀 기능을 구현하세요
+        
+        // 캐러셀 기능:
+        // 1. 3초마다 자동으로 다음 슬라이드로 이동 (무한루프)
+        // 2. 정지 버튼으로 자동 재생 멈춤
+        
+        // 무한루프 구현:
+        // - 마지막 슬라이드에서 다음으로 가면 첫 번째 슬라이드로
+        // - 첫 번째 슬라이드에서 이전으로 가면 마지막 슬라이드로
+        
+        // 힌트:
+        // - setInterval로 3초마다 자동 이동
+        // - clearInterval로 정지
+        // - transform: translateX()        /* 이 함수는 요소를 X축(가로축, 좌우 방향) 으로 이동시키는 역할을 합니다. */
+        // - transform: translateX(100%);   /* 자기 너비만큼 오른쪽 이동 */
+        // - transform: translateX(-50%);   /* 자기 너비의 절반만큼 왼쪽 이동 */
+        // - 현재 슬라이드 인덱스 계산방법: 
+        //   currentSlide = (currentSlide + 1) % totalSlides;
+
+        let currentSlide = 0; // 현재 슬라이드 인덱스
+        let interval = null; // 인터벌 변수
+        let isPlaying = true; // 자동 재생 여부
+        const totalSlides = 3; // 총 슬라이드 개수
+
+    </script>
+</body>
+</html>

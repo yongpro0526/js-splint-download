@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 14: 타이머</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #333; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .timer-section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .timer-section h2 {
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .display {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        .status {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⏰ 타이머</h1>
+        
+        <!-- 타이머 섹션 -->
+        <div class="timer-section">
+            <h2>⏰ 타이머</h2>
+            <div class="display" id="timerDisplay">00:00</div>
+            <div class="status" id="timerStatus">준비됨</div>
+            <div class="controls">
+                <button class="btn-primary" id="startTimer">시작</button>
+                <button class="btn-warning" id="pauseTimer">일시정지</button>
+                <button class="btn-danger" id="stopTimer">정지</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TODO: 타이머 기능을 구현하세요
+        
+        // 타이머 기능:
+        // 1. 시작 버튼: 1초마다 타이머 증가
+        // 2. 일시정지 버튼: 타이머 정지
+        // 3. 정지 버튼: 타이머를 0으로 리셋
+        
+        // 시간 표시 형식:
+        // - 초가 60 미만일 때: "00:초" (예: 00:45)
+        // - 초가 60 이상일 때: "분:초" (예: 01:30, 02:15)
+        
+        // 힌트:
+        // - setInterval() / clearInterval() 사용
+        // - addEventListener로 이벤트 처리
+        // - Math.floor(초 / 60)으로 분 계산
+        // - 초 % 60으로 남은 초 계산
+        // - 문자열 붙이기로 두 자리 숫자 만들기 (예: '0' + 5 = '05')
+        
+    </script>
+</body>
+</html>

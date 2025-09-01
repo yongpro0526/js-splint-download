@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 7: 클래스 조작</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { padding: 10px 20px; margin: 10px; }
+        .box { 
+            padding: 20px; 
+            margin: 10px; 
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+        }
+        .highlight { background-color: yellow; }
+        .error { background-color: red; color: white; }
+        .success { background-color: green; color: white; }
+        .large { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <h1>실습 7: 클래스 조작</h1>
+    <p>버튼을 클릭하여 박스의 클래스를 조작해보세요.</p>
+    
+    <button id="addBtn">highlight 클래스 추가</button>
+    <button id="removeBtn">highlight 클래스 제거</button>
+    <button id="toggleBtn">large 클래스 토글</button>
+    <button id="replaceBtn">box를 success로 교체</button>
+    
+    <div id="target" class="box">클래스를 조작할 박스</div>
+
+    <script>
+        // TODO: 각 버튼 클릭 시 target 요소의 클래스를 조작하세요
+        // addBtn: 'highlight' 클래스를 추가
+        // removeBtn: 'highlight' 클래스를 제거
+        // toggleBtn: 'large' 클래스를 토글 (있으면 제거, 없으면 추가)
+        // replaceBtn: 'box' 클래스를 'success' 클래스로 교체
+        // 힌트: classList.add(), classList.remove(), classList.toggle(), classList.replace() 사용
+        
+    </script>
+</body>
+</html>
