@@ -55,7 +55,29 @@
         // findNextBtn: target의 다음 형제 요소를 찾아서 텍스트를 result에 표시
         // findPrevBtn: target의 이전 형제 요소를 찾아서 텍스트를 result에 표시
         // 힌트: parentNode, nextElementSibling, previousElementSibling 사용
-        
+
+        let findParentBtn = document.getElementById("findParentBtn");
+        let findNextBtn = document.getElementById("findNextBtn");
+        let findPrevBtn = document.getElementById("findPrevBtn");
+        let result = document.getElementById("result");
+        let parent = document.getElementById("parent");
+        let child1 = document.getElementById("child1");
+        let child2 = document.getElementById("child2");
+        let target = document.getElementById("target");
+
+        findParentBtn.addEventListener("click", function() {
+            parent.classList.add("highlight");
+            result.textContent = "target의 부모"
+        });
+
+        findNextBtn.addEventListener("click", function() {
+            child1.classList.add("highlight");
+        });
+
+        findPrevBtn.addEventListener("click", function() {
+            child2.classList.add("highlight");
+        });
+
     </script>
 </body>
 </html>
